@@ -4,10 +4,6 @@ end
 
 module Pangram
   def self.pangram?(text)
-    pangram = true
-    ('a'..'z').each do |letter|
-      return if !text.downcase.include?(letter)
-    end
-    pangram
+    'a'.upto('z') { |l| return false unless text.downcase.include?(l) }
   end
 end

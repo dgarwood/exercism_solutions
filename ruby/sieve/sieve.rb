@@ -14,7 +14,7 @@ class Sieve
     # only sieve if we have @values
     # and stop when first_term^2 > last_term (nothing left to remove)
     # ie if @num = 100, stop at 11 since 11^2 = 121
-    until @values.empty? || @values[0]**2 > @values[-1]
+    while @values.any? && @values[0]**2 <= @values[-1]
       @values = @values.reject{ |n| n % @values[0] == 0 && n / @values[0] > 1 }
       @primes << @values.shift
     end

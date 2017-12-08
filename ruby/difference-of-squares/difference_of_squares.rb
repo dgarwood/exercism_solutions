@@ -2,17 +2,20 @@ module BookKeeping
   VERSION = 4
 end
 
+# updated based on feedback from tnordloh and tenebrousedge
 class Squares
   def initialize(value)
     @value = value
   end
 
   def square_of_sum
-    (1..@value).sum**2
+    @square_of_sum ||= ((@value * (@value + 1))/2)**2
   end
 
   def sum_of_squares
-    (1..@value).sum { |i| i**2 }
+    # formula from
+    # https://trans4mind.com/personal_development/mathematics/series/sumNaturalSquares.htm
+    @sum_of_squares ||= (@value**3.to_f / 3 + @value**2.to_f / 2 + @value.to_f / 6).round
   end
 
   def difference

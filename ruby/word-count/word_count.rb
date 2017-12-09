@@ -9,9 +9,8 @@ class Phrase
 
   def word_count
     counts = {}
-    words = @phrase.downcase.tr(',:.!&@$%^', ' ').split(' ')
+    words = @phrase.downcase.scan(/\b[\w']+\b/)
     words.each do |word|
-      word.gsub!("'", '') if word.count("'") > 1
       counts[word] = words.count(word)
     end
     counts

@@ -2,23 +2,32 @@ module BookKeeping
   VERSION = 1
 end
 
-class Bob
+module Bob
   @phrase = ""
 
   def self.hey(phrase)
-    @phrase = phrase
-    return "Fine. Be that way!" if !speaking? && !question?
-    return "Sure." if question? && !yelling?
-    return "Whoa, chill out!" if yelling?
-    "Whatever."
+    @phrase = phrase.strip
+
+    case
+    when yelling?
+      "Whoa, chill out!"
+    when question?
+      "Sure."
+    when not_speaking?
+      "Fine. Be that way!"
+    else
+      "Whatever."
+    end
   end
 
-  def self.speaking?
-    @phrase.scan(/\w+/).count > 0
+  private
+
+  def self.not_speaking?
+    @phrase.scan(/\w+/).empty?
   end
 
   def self.question?
-    @phrase.strip[-1] == '?'
+    @phrase[-1] == '?'
   end
 
   def self.yelling?

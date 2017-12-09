@@ -4,15 +4,11 @@ end
 
 class Phrase
   def initialize(new_phrase)
-    @phrase = new_phrase
+    @counts = Hash.new(0)
+    new_phrase.downcase.scan(/\b[\w']+\b/) { |word| @counts[word] += 1 }
   end
 
   def word_count
-    counts = {}
-    words = @phrase.downcase.scan(/\b[\w']+\b/)
-    words.each do |word|
-      counts[word] = words.count(word)
-    end
-    counts
+    @counts
   end
 end

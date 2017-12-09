@@ -11,6 +11,6 @@ module Grains
   end
 
   def self.total
-    square(TOTAL_SQUARES) * 2 - 1
+    2**TOTAL_SQUARES - 1
   end
 end

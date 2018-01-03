@@ -1,0 +1,28 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "exercism hello world",
+  "main": "hello-world.js",
+  "scripts": {
+    "test": "jasmine hello-world.spec.js",
+    "lint": "./node_modules/.bin/eslint `ls *.js | grep -v .spec.js`"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgarwood/exercism_solutions.git"
+  },
+  "author": "Dewey Garwood",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dgarwood/exercism_solutions/issues"
+  },
+  "homepage": "https://github.com/dgarwood/exercism_solutions#readme",
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}

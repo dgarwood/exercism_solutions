@@ -1,14 +1,11 @@
-//
-// This is only a SKELETON file for the "Leap" exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+'use strict'
 
 var Year = function (input) {
-  year = input
+  this.year = input
 }
 
 Year.prototype.isLeap = function () {
-  return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0
+  return this.year % 100 === 0 ? this.year % 400 === 0 : this.year % 4 === 0
 }
 
 module.exports = Year

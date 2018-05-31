@@ -7,3 +7,7 @@
 # Ignore node modules
 /javascript/*/node_modules/*
 
+# Ignore python modules
+/python/*/.cache/*
+/python/*/__pycache__/*
+/python/*/*.pyc

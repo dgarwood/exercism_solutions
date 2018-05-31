@@ -1,5 +1,5 @@
 def reverse(input=''):
-    reverse = ''
-    while len(input) > 0:
-        reverse, input = reverse + input[-1], input[:-1]
-    return reverse
+    # string slicing uses [start:end:step]
+    # when start and end are omitted, they default
+    # to the beginning and end of the string
+    return input[::-1]
